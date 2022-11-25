@@ -93,7 +93,7 @@ module.exports.logOut = async(req, res, next) => {
   }
 };
 
-const createUser = async function (req, res) {
+module.exports.joinuser = async (req, res) => {
   try {
       let body = req.body
 
