@@ -8,56 +8,56 @@ const MessageSchema = mongoose.Schema(
     ,sender_id:{
         type:String,
         required:true,
-        default:"3525"
+       default:[]
     },sender_reg_no:{
         type:String,
-        default:"3525"
+       default:[]
     },sender_number:{
         type:Number,
-        default:"3525",
+       default:[],
         required:true
     },sender_name:{
         type:String,
-        default:"3525"
+       default:[]
     },receiver_id:{
         type:String,
-        default:"3525"
+       default:[]
     },receiver_reg_no:{
         type:String,
-        default:"3525"
+       default:[]
     },receiver_number:{
         type:Number,
-        default:"3525"
+       default:[]
     },receiver_name:{
         type:String,
-        default:"3525"
+       default:[]
     },text_message:{
         type:String,
-        default:"3525"
+       default:[]
     },file_msg:{
         type:String,
-        default:"3525"
+       default:[]
     },gallery_files:{
         type:String,
-        default:"3525"
+       default:[]
     },user_location:{
         type:String,
-        default:"3525"
+       default:[]
     },ducuments:{
         type:String,
-        default:"3525"
+       default:[]
     },contacts:{
         type:String,
-        default:"3525"
+       default:[]
     },voice_record_msg:{
         type:String,
-        default:"3525"
+       default:[]
     },mems_icon_msg:{
         type:String,
-        default:"3525"
+       default:[]
     },message_status:{
         type:String,
-        default:"3525"
+       default:[]
     }
   },
   {
