@@ -97,37 +97,37 @@ module.exports.joinuser = async (req, res) => {
   try {
       let body = req.body
 
-      if (!validation.isrequestBody(body)) {
-          return res.status(400).send({ status: false, msg: "Invalid parameters, please provide user details" })
-      }
+      // if (!validation.isrequestBody(body)) {
+      //     return res.status(400).send({ status: false, msg: "Invalid parameters, please provide user details" })
+      // }
 
       const { user_reg_no, country, user_phone_number, user_name } = body
 
-      if (!validation.isValidobjectId(user_reg_no)) {
-          return res.status(400).send({ status: false, msg: "Doctor id is wrong" })
-      }
+      // if (!validation.isValidobjectId(user_reg_no)) {
+      //     return res.status(400).send({ status: false, msg: "Doctor id is wrong" })
+      // }
 
-      if (!validation.isValid(country)) {
-          return res.status(400).send({ status: false, msg: "please provide fullname" })
+      // if (!validation.isValid(country)) {
+      //     return res.status(400).send({ status: false, msg: "please provide fullname" })
 
-      }
-
-
-      if (!validation.isValid(user_phone_number)) {
-        return res.status(400).send({ status: false, msg: "please provide phone number" })
-
-    }
+      // }
 
 
-      if (!validation.isValid(user_name)) {
-          return res.status(400).send({ status: false, msg: "please provide email" })
+    //   if (!validation.isValid(user_phone_number)) {
+    //     return res.status(400).send({ status: false, msg: "please provide phone number" })
 
-      }
+    // }
 
-      if (!(/^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/.test(user_phone_number))) {
-          return res.status(400).send({ status: false, message: "Mobile Number is not valid" })
 
-      }
+      // if (!validation.isValid(user_name)) {
+      //     return res.status(400).send({ status: false, msg: "please provide email" })
+
+      // }
+
+      // if (!(/^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/.test(user_phone_number))) {
+      //     return res.status(400).send({ status: false, message: "Mobile Number is not valid" })
+
+      // }
 
       let duplicatephone = await userModel.findOne({ phone });
       if (duplicatephone) {
