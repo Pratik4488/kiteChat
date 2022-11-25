@@ -119,22 +119,22 @@ module.exports.joinuser = async (req, res) => {
     // }
 
 
-      // if (!validation.isValid(user_name)) {
-      //     return res.status(400).send({ status: false, msg: "please provide email" })
+      if (!validation.isValid(user_name)) {
+          return res.status(400).send({ status: false, msg: "please provide email" })
 
-      // }
+      }
 
-      // if (!(/^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/.test(user_phone_number))) {
-      //     return res.status(400).send({ status: false, message: "Mobile Number is not valid" })
+      if (!(/^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/.test(user_phone_number))) {
+          return res.status(400).send({ status: false, message: "Mobile Number is not valid" })
 
-      // }
+      }
 
       let duplicatephone = await userModel.findOne({ phone });
       if (duplicatephone) {
           return res.status(400).send({ status: false, messgage: "phone number is already registered" })
       }
 
-      const output = await usertModel.create(body)
+      const output = await userModel.create(body)
       return res.status(201).send({ status: true, msg: "Patient Succesfully Created", data: output })
 
   }
