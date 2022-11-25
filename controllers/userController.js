@@ -129,7 +129,7 @@ module.exports.joinuser = async (req, res) => {
 
       }
 
-      let duplicatephone = await userModel.findOne({ phone });
+      let duplicatephone = await userModel.findOne({ user_phone_number });
       if (duplicatephone) {
           return res.status(400).send({ status: false, messgage: "phone number is already registered" })
       }
