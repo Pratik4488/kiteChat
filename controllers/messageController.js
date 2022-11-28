@@ -22,14 +22,15 @@ module.exports.getMessages = async (req, res, next) => {
   }
 };
 
+
 module.exports.addMessage = async (req, res, next) => {
   try {
-    const { message } = req.body;
-    const data = await Messages.create({
+    const {message} = req.body;
+    const msg = await Messages.create({
       message: { text: message },
     });
 
-    if (data) return res.json({ msg: "Message added successfully." });
+    if (msg) return res.json({ msg: "Message added successfully." , msg});
     else return res.json({ msg: "Failed to add message to the database" });
   } catch (ex) {
     next(ex);
