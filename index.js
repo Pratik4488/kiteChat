@@ -31,7 +31,8 @@ const server = app.listen(process.env.PORT, () =>
 
 const io = socket(server, {
   cors: {
-    origin: "https://kitemsg.herokuapp.com/",
+    origin:
+      "https://638471df1f565929c7878c7f--meek-profiterole-37e564.netlify.app/",
     credentials: true,
   },
 });
